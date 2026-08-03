@@ -1,0 +1,34 @@
+Owner.java file
+
+Owner class is subclass of person
+all variables are private and getters ,setters are public 
+
+it conatains methods for owner's detail like address, city , telephone 
+and also methods for add his/her pets and search, retrieve, or manage pets.
+
+
+
+pet.java
+
+
+pet is subclass of NamedEntity
+so it also contain inheritance
+
+it contains pet bith date and pettype methods, also getters for visits and the 
+addVisit() method
+
+
+vet.java
+subclass of person class
+
+it contains set for store specialties of vet to avoid duplicacy and also uses stream 
+and comparator , also contains method like add specialties and count of it
+
+
+
+Today:
+=> implemented Function, Predicate, Consumer, Supplier and learned Thread ,Runnable,race condition,deadlock
+Tomorrow:
+=> implement race condition and its solution
+Impediments:
+=> in Function, Predicate, Consumer, Supplier

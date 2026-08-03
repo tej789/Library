@@ -1,0 +1,25 @@
+Thread vs runnable 
+
+after extends Thread we can not extends other class from this class
+but after implements runnable we can 
+
+in Thread all thread has their own object they not share object 
+in runnable all thread share same object 
+
+runnable suppots ,modern java while Thread not supports
+
+race condition : occurs when multiple threads read and write on shared data
+                 and final answer is unpredictable
+
+deadlock : state where two or more thread black each other
+
+
+
+An ExecutorService is a high-level Java interface that manages a pool of reusable worker threads
+
+
+JDBC: Connection, Statement, ResultSet
+
+Connection
+The Connection interface represents a physical session or an active channel 
+established with a specific database
