@@ -18,8 +18,9 @@ public class TotalBooks {
     // method so that only one thread can access it at time and the other thread has to wait for the first 
     // thread to finish its execution and then the second thread can access it
 
-public int getTotalBooks(){
-   return totalBooks;
-}
+public synchronized int getTotalBooks() {
+        return totalBooks;
+    }
 
+   
 }

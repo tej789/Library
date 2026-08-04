@@ -34,7 +34,7 @@ public class Executor {
         }
     }
 
-    System.out.println("Total Books: "+ totalBooks.getTotalBooks());
+    System.out.println("Total Books: "+ totalBooks);
    }
 
 
