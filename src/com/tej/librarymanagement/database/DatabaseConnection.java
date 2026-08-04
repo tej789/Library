@@ -8,20 +8,30 @@ import java.sql.Statement;
 
 public class DatabaseConnection{
 
-    private static final String url = "jdbc:mysql://aivencloud.com";
-    private static final String username = "tej";
-    private static final String password = "AVNS_nEihUTiiWi-LoG2FyUT";
+private static final String url = "jdbc:mysql://localhost:3306/library";
+    private static final String username = "root";
+    private static final String password = "mysql";
 
-    public DatabaseConnection() {
-        try {
-           Connection connection = DriverManager.getConnection(url, username, password);
-           
-   
+    public void data() {
+        try{
+            Connection con = DriverManager.getConnection(url,username,password);
+            Statement s = con.createStatement();
+            ResultSet r= s.executeQuery("select * from books");
+            while(r.next()){
+                System.out.println(r.getString("title"));
+                System.out.println(r.getString("writer"));
+                System.out.println(r.getDouble("price"));
+            }
+          
+       
+               
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
     }
 
-    
-
+    public static void main(String[] args) {
+      DatabaseConnection db = new DatabaseConnection();
+      db.data();
+    } 
 }
