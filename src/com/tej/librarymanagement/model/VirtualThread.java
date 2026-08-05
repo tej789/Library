@@ -17,7 +17,7 @@ public class VirtualThread {
     public static void main(String[] args) throws InterruptedException {
 
         Counter2 counter = new Counter2();
-        ExecutorService executor = Executors.newVirtualThreadPerTaskExecutor()  ;
+        ExecutorService executor = Executors.newFixedThreadPool(2);
 
         executor.submit(() -> {
             for (int i = 1; i <= 1000; i++) {
@@ -36,4 +36,4 @@ public class VirtualThread {
 
         System.out.println("Count = " + counter.count);
     }
-}
+}  
