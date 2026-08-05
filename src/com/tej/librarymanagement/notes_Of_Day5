@@ -25,10 +25,37 @@ it contains set for store specialties of vet to avoid duplicacy and also uses st
 and comparator , also contains method like add specialties and count of it
 
 
+//////////////////////////////////////////////////////////////
 
-Today:
-=> implemented Function, Predicate, Consumer, Supplier and learned Thread ,Runnable,race condition,deadlock
-Tomorrow:
-=> implement race condition and its solution
-Impediments:
-=> in Function, Predicate, Consumer, Supplier
+
+core-java-modules/core-java-concurrency-basic/src/main/java/com/baeldung/concurrent/callable/FactorialTask.java
+
+--> this file counts fectorial of a number  
+here we use collable interface , and created call method that throws exception if number is 
+less then 0
+
+
+
+core-java-modules/core-java-streams/src/main/java/com/baeldung/stream/modifystream/entity/Person.java
+
+this file has pricate data fields name and email , also it conatains constructor and getters and
+setters
+
+
+
+core-java-modules/core-java-streams/src/main/java/com/baeldung/stream/modifystream/entity/ImmutablePerson.java
+
+in this file it removed setters method , and created another method withEmail it return name with
+ its updated email
+
+
+
+core-java-modules/core-java-streams/src/main/java/com/baeldung/stream/forEach/ReverseList.java
+
+in this file we use Arraylist , iterator and functional interfave consumer
+
+here in consumer removeElement ,first it print element we passes and size of list and then
+if element id "A" then its remove "D"
+
+
+

@@ -3,12 +3,11 @@ package com.tej.librarymanagement.model;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-public class Executor {
-   public static void main(String[] args){
-    
+public class VirtualThread {
+    public static void main(String[] args){
     TotalBooks totalBooks = new TotalBooks();
-    int poolsize = 1;
-    ExecutorService executorService = Executors.newFixedThreadPool(poolsize);
+
+    ExecutorService executorService = Executors.newVirtualThreadPerTaskExecutor();
 
     executorService.execute((()->{
         for(int i=0;i<2000;i++){
@@ -23,14 +22,10 @@ public class Executor {
         }
     }));
 
-    executorService.execute((()->{
-        for(int i=0;i<500;i++){
-            totalBooks.incrementTotalBooks();
-        }
-    })); 
-
     executorService.shutdown();
 
+
+    // to remove race condition we added this section
     if(!executorService.isTerminated()){
         try {
             Thread.sleep(1000);
@@ -41,8 +36,6 @@ public class Executor {
 
     System.out.println("Total Books: "+ totalBooks.getTotalBooks());
    }
-
-
-
-
 }
+
+
