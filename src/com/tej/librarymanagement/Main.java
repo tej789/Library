@@ -254,7 +254,7 @@ public class Main {
                 // service.findBookByTitle("Boo");
 
 
-//                 service.partition();
+              service.partition();
 // service.partitionWithSub();
         }
 
