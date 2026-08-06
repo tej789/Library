@@ -1,4 +1,18 @@
 package com.tej.librarymanagement.model;
+
+class Counter {
+    int count = 0;
+
+    public synchronized  void increment() {
+        count++;
+    }
+    public synchronized int getCount() {
+        return count;
+    }
+}
+
+
+
 class thread extends Thread {
 
     private Counter counter;
@@ -28,6 +42,6 @@ class thread extends Thread {
         t1.join();
         t2.join();
 
-        System.out.println("Count = " + counter.count);
+        System.out.println("Count = " + counter.getCount());
     }
 }

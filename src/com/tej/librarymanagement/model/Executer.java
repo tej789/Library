@@ -10,6 +10,10 @@ class Counter1 {
     public synchronized void increment() {
         count++;
     }
+
+    public synchronized int getCount() {
+        return count;
+    }
 }
 
 public class Executer {
@@ -20,24 +24,21 @@ public class Executer {
         ExecutorService executor = Executors.newFixedThreadPool(2);
 
        executor.submit(() -> {
-    System.out.println("Worker 1 started");
     for (int i = 1; i <= 1000; i++) {
         counter.increment();
     }
-    System.out.println("Worker 1 finished");
 });
 
 executor.submit(() -> {
-    System.out.println("Worker 2 started");
+   
     for (int i = 1; i <= 1000; i++) {
         counter.increment();
     }
-    System.out.println("Worker 2 finished");
 });
 
         executor.shutdown();
         executor.awaitTermination(1, TimeUnit.MINUTES);
 
-        System.out.println("Count = " + counter.count);
+        System.out.println("Count = " + counter.getCount());
     }
 }
