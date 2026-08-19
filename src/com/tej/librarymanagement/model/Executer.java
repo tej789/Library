@@ -21,7 +21,7 @@ public class Executer {
     public static void main(String[] args) throws InterruptedException {
 
         Counter1 counter = new Counter1();
-        ExecutorService executor = Executors.newFixedThreadPool(2);
+        ExecutorService executor = Executors.newFixedThreadPool(20000);
 
        executor.submit(() -> {
     for (int i = 1; i <= 1000; i++) {
@@ -36,9 +36,9 @@ executor.submit(() -> {
     }
 });
 
-        executor.shutdown();
-        executor.awaitTermination(1, TimeUnit.MINUTES);
-
+        // executor.shutdown();
+        // executor.awaitTermination(1, TimeUnit.MINUTES);
+Thread.sleep(1); // Wait for a second to allow threads to finish
         System.out.println("Count = " + counter.getCount());
     }
 }

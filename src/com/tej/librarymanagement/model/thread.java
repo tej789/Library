@@ -24,7 +24,8 @@ class thread extends Thread {
     @Override
     public void run() {
 
-        for(int i = 0; i < 1000; i++) {
+        while(true){
+            System.out.println("Thread " + Thread.currentThread().getName() + " is running");
             counter.increment();
         }
     }
@@ -39,8 +40,8 @@ class thread extends Thread {
         t1.start();
         t2.start();
 
-        t1.join();
-        t2.join();
+        // t1.join();
+        // t2.join();
 
         System.out.println("Count = " + counter.getCount());
     }
